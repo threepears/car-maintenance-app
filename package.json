@@ -1,6 +1,6 @@
 {
-  "name": "soccer-app",
-  "version": "1.0.0",
+  "name": "Fantasty Soccer App",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "node ./server/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ben Bledsoe, Michael Conrad, Brian Stumbaugh",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
