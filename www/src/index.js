@@ -3,7 +3,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 
-console.log("IN HERE")
+console.log("IN HERE bruh BRUH")
 
 ReactDOM.render(
     <div>
