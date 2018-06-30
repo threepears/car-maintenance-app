@@ -1,12 +1,7 @@
-// import React from 'react';
-// import { render } from 'react-dom';
-const React = require('react')
-const ReactDOM = require('react-dom')
+import React from 'react'
+import { render } from 'react-dom'
+import App from './containers/App'
+import './styles/main.scss'
 
 console.log("IN HERE bruh BRUH")
-
-ReactDOM.render(
-    <div>
-        <h1>Hello ReactJs</h1>
-    </div>,
-  document.getElementById('root'));
+render(<App/>, document.getElementById('root'))
