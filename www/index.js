@@ -1,4 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import { render } from 'react-dom';
+const React = require('react')
+const ReactDOM = require('react-dom')
 
-ReactDOM.render(<div>hello</div>, document.getElementById('root'));
+console.log("IN HERE")
+
+ReactDOM.render(
+    <div>
+        <h1>Hello ReactJs</h1>
+    </div>,
+  document.getElementById('root'));
