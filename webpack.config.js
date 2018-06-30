@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // import autoprefixer from 'autoprefixer';
 
 module.exports = {
-  entry: './www/index.js',
+  entry: './www/src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: "bundle.js"
