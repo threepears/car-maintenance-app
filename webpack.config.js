@@ -36,11 +36,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./www/index.html",
-      filename: "./index.html"
-    })
-  ],
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     template: "./www/index.html",
+  //     filename: "./index.html"
+  //   })
+  // ],
   watch: true
 }
