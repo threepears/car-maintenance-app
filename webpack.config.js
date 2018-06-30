@@ -10,7 +10,8 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-    port: 8080,
+    // Default port is 8080; doesn't need to be declared
+    // port: 3000,
     open: true,
     proxy: {
         "/api": "http://localhost:5000"
