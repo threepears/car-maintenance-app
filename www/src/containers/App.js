@@ -11,9 +11,7 @@ export default class App extends Component {
         <Button variant="contained" color="primary">
           Hello World
         </Button>
-        <Button variant="contained" color="primary">
-          Hello World
-        </Button>
+        wut
       </div>
     )
   }
