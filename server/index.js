@@ -4,9 +4,14 @@ const express = require('express');
 const app = express();
 const PORT = 5000;
 
-app.get('/service-events', (req, res) => {
-  res.send('Here are some service events!');
-});
+const standardResponse = require('./utils/response');
+
+
+app.get('/service-events', (req, res) => res.send(standardResponse({name: 'bert'})));
+
+
+
+
 
 app.get('/service-categories', (req, res) => {
   res.send('Here are some service categories!');
