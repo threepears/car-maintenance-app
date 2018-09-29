@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: npm run start
+    volumes:
+      - .:/usr/workspace/ncms
+      - /usr/workspace/ncms/node_modules
+    ports:
+      - "4000:5000"
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://ncms@postgres/ncms
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: ncms
+      POSTGRES_DB: ncms
