@@ -60,3 +60,4 @@ typings/
 
 # Bundle folder
 dist
+server/dist
