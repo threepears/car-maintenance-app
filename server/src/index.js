@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
-const express = require('express');
-const app = express();
+import express from 'express'
+
+const app = express()
 const router = require('./routes')
-
-const PORT = 5000;
+const PORT = 5000
 
 app.use('/', router)
 
