@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "www": "webpack-dev-server --mode development",
-    "server": "nodemon ./server/index.js",
+    "server": "nodemon ./server/dist/index.js",
     "start": "concurrently \"npm run www\" \"npm run server\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "concurrently \"npm run server-build\" \"npm run server\"",
     "server-build" : "babel ./server/src -w -d ./server/dist --presets env,stage-2"
   },
   "keywords": [],
