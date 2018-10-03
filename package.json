@@ -4,9 +4,10 @@
   "description": "",
   "scripts": {
     "www": "webpack-dev-server --mode development",
-    "server": "nodemon ./server/index.js",
+    "server": "nodemon ./server/dist/index.js",
     "start": "concurrently \"npm run www\" \"npm run server\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "concurrently \"npm run server-build\" \"npm run server\" \"npm run www\"",
+    "server-build" : "babel ./server/src -w -d ./server/dist --presets env,stage-2"
   },
   "keywords": [],
   "author": "Ben Bledsoe, Michael Conrad, Brian Stumbaugh",
@@ -17,6 +18,9 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^1.3.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-stage-2": "^6.24.1",
     "express": "^4.16.3",
     "knex": "^0.15.2",
     "react": "^16.4.1",
