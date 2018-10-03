@@ -6,7 +6,7 @@
     "www": "webpack-dev-server --mode development",
     "server": "nodemon ./server/dist/index.js",
     "start": "concurrently \"npm run www\" \"npm run server\"",
-    "start-dev": "concurrently \"npm run server-build\" \"npm run server\"",
+    "start-dev": "concurrently \"npm run server-build\" \"npm run server\" \"npm run www\"",
     "server-build" : "babel ./server/src -w -d ./server/dist --presets env,stage-2"
   },
   "keywords": [],

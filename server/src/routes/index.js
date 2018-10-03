@@ -6,7 +6,7 @@ const standardResponse = require('../utils/response');
 
 
 router.get('/', (req, res) => {
-  res.send('Welcome to the auto maintenance app!');
+  res.send('Welcome to the auto maintenance apps!');
 });
 
 router.get('/service-events', (req, res) =>
