@@ -4,17 +4,17 @@ services:
     build: .
     command: npm run start-dev
     volumes:
-      - .:/usr/workspace/ncms
-      - /usr/workspace/ncms/node_modules
+      - .:/usr/groupproject/autoapp
+      - /usr/groupproject/autoapp/node_modules
     ports:
       - "4000:5000"
       - "8080:8080"
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://ncms@postgres/ncms
+      DATABASE_URL: postgres://root@postgres/autoapp
   postgres:
     image: postgres:9.6.2-alpine
     environment:
-      POSTGRES_USER: ncms
-      POSTGRES_DB: ncms
+      POSTGRES_USER: autoapp
+      POSTGRES_DB: autoapp
