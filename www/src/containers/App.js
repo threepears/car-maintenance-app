@@ -17,24 +17,32 @@ const styles = {
   },
 };
 
-const clickButton = () => {
-  console.log("BOOOOOO")
-  return axios.get('/service-shops')
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { storeName: null };
+    this.clickButton = this.clickButton.bind(this)
+  }
+
+  clickButton() {
+    console.log("BOOOOOO")
+    return axios.get('http://localhost:5000/service-shops')
+      .then(function (response) {
+        console.log("RESULT", response);
+        this.setState({storeName: "Steve"})
+      })
+      .catch(function (error) {
+        console.log("OH NO", error);
+      });
+  }
+
   render() {
     return (
       <div className='butt'>
         <h2>Get Data</h2>
-        <Button className='button1' variant="contained" color="primary" onClick={clickButton}>
+        <h3>{this.state.storeName}</h3>
+        <Button className='button1' variant="contained" color="primary" onClick={this.clickButton}>
           Get
         </Button>
       </div>
