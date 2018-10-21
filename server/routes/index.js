@@ -3,6 +3,8 @@
 const express = require('express');
 const router = express.Router()
 const standardResponse = require('../utils/response');
+const data = require('./dummy.json');
+console.log(data);
 
 
 router.get('/', (req, res) => {
@@ -10,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/service-events', (req, res) =>
-  res.send(standardResponse({name: 'bert'}))
+  res.send(standardResponse(data.serviceEvents))
 );
 
 router.get('/service-categories', (req, res) => {
