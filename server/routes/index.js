@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router()
 const standardResponse = require('../utils/response');
 const data = require('./dummy.json');
-console.log(data);
+console.log(data.Midas);
 
 
 router.get('/', (req, res) => {
@@ -19,9 +19,9 @@ router.get('/service-categories', (req, res) => {
   res.send('Here are some service categories!');
 });
 
-router.get('/service-shops', (req, res) => {
-  res.send('Here are some service shops!');
-});
+router.get('/service-shops', (req, res) =>
+  res.send(standardResponse(data.serviceShops))
+);
 
 router.get('/users/:userId/profile', (req, res) => {
   res.send('Here is your user profile!');

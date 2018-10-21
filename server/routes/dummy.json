@@ -1,14 +1,13 @@
 {
   "serviceEvents": {},
   "serviceCategories": [
-    "Oil change", "Brakes", "Tune-up", "Tires", "Transmission fluid", "Spark plugs"
+    "Oil Change", "Brakes", "Tune Up", "Tires", "Transmission Fluid", "Spark Plugs"
   ],
   "serviceShops": {
-    "Midas": [
-    {
+    "Midas": [{
       "id": 1,
       "name": "Midas - 624",
-      "address": "111 bob pike",
+      "address": "111 Charlotte Pike",
       "phone": "6156055899",
       "hours": {
         "Monday": "9am - 5pm",
@@ -19,16 +18,41 @@
         "Saturday": "Closed",
         "Sunday": "Closed"
       }
-    },
-    {},
-    {}
-   ],
-    "Valvoline": [{
-      "id": ,
-      "name":
-      "address"
+    }],
+    "Midas": [{
+      "id": 2,
+      "name": "Midas - 625",
+      "address": "333 Donelson Pike",
+      "phone": "6156055811",
+      "hours": {
+        "Monday": "9am - 5pm",
+        "Tuesday": "9am - 5pm",
+        "Wednesday": "9am - 5pm",
+        "Thursday": "9am - 5pm",
+        "Friday": "9am - 5pm",
+        "Saturday": "Closed",
+        "Sunday": "Closed"
+      }
+    }],
+    "Midas": [{
+      "id": 3,
+      "name": "Midas - 626",
+      "address": "444 Nolensville Road",
+      "phone": "6156055800",
+      "hours": {
+        "Monday": "9am - 5pm",
+        "Tuesday": "9am - 5pm",
+        "Wednesday": "9am - 5pm",
+        "Thursday": "9am - 5pm",
+        "Friday": "9am - 5pm",
+        "Saturday": "Closed",
+        "Sunday": "Closed"
+      }
     }]
-
-  }
+  },
+  "Valvoline": [{
+    "id": 5,
+    "name": "Valvoline - 224",
+    "address": "222 Dirt Road"
+  }]
 }
-
