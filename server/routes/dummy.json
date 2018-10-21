@@ -1,6 +1,34 @@
 {
-  "serviceEvents": [
+  "serviceEvents": {},
+  "serviceCategories": [
     "Oil change", "Brakes", "Tune-up", "Tires", "Transmission fluid", "Spark plugs"
-  ]
+  ],
+  "serviceShops": {
+    "Midas": [
+    {
+      "id": 1,
+      "name": "Midas - 624",
+      "address": "111 bob pike",
+      "phone": "6156055899",
+      "hours": {
+        "Monday": "9am - 5pm",
+        "Tuesday": "9am - 5pm",
+        "Wednesday": "9am - 5pm",
+        "Thursday": "9am - 5pm",
+        "Friday": "9am - 5pm",
+        "Saturday": "Closed",
+        "Sunday": "Closed"
+      }
+    },
+    {},
+    {}
+   ],
+    "Valvoline": [{
+      "id": ,
+      "name":
+      "address"
+    }]
+
+  }
 }
 
