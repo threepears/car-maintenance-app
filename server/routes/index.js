@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router()
 const standardResponse = require('../utils/response');
 const data = require('./dummy.json');
-console.log(data.Midas);
+console.log(data.serviceShops);
 
 
 router.get('/', (req, res) => {
