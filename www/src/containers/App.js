@@ -21,19 +21,19 @@ const styles = {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { storeName: null };
+    this.state = { storeName: "None" };
     this.clickButton = this.clickButton.bind(this)
   }
 
   clickButton() {
-    console.log("BOOOOOO")
+    const that = this
     return axios.get('http://localhost:5000/service-shops')
       .then(function (response) {
-        console.log("RESULT", response);
-        this.setState({storeName: "Steve"})
+        const name = response.data.payload.Midas[0].name
+        that.setState({storeName: name})
       })
       .catch(function (error) {
-        console.log("OH NO", error);
+        console.log("OH NO!!!", error);
       });
   }
 
