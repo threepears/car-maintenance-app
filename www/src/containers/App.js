@@ -17,14 +17,25 @@ const styles = {
   },
 };
 
+const clickButton = () => {
+  console.log("BOOOOOO")
+  return axios.get('/service-shops')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
 
 class App extends Component {
   render() {
     return (
       <div className='butt'>
-        <h1>Login Below</h1>
-        <Button className='button1' variant="contained" color="primary">
-          Login
+        <h2>Get Data</h2>
+        <Button className='button1' variant="contained" color="primary" onClick={clickButton}>
+          Get
         </Button>
       </div>
     )
