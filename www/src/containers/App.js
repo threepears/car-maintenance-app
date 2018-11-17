@@ -28,8 +28,10 @@ class App extends Component {
   clickButton() {
     const that = this
     return axios.get('http://localhost:5000/service-shops')
-      .then(function (response) {
-        const { name, phone, address } = response.data.payload.Midas[0]
+      .then(function ({ data: { payload } }) {
+        const numResults = payload.Midas.length
+        const randomStore = Math.floor(Math.random() * numResults)
+        const { name, phone, address } = payload.Midas[randomStore]
         that.setState({storeName: name, phone, address })
       })
       .catch(function (error) {

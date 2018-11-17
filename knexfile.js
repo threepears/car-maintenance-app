@@ -8,15 +8,15 @@ module.exports = {
         port: 5432,
         host: 'localhost',
         database: 'car_app',
-        user: 'ben',
-        password: 'ben',
+        user: 'admin',
+        password: 'admin',
       },
       seeds: {
         directory: './server/db/seeds/dev'
       },
       useNullAsDefault: true
     },
-  
+
     production: {
       client: 'pg',
       connection: process.env.DATABASE_URL,
