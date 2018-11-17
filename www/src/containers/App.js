@@ -19,12 +19,31 @@ const styles = {
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { storeName: "None" };
+    this.clickButton = this.clickButton.bind(this)
+  }
+
+  clickButton() {
+    const that = this
+    return axios.get('http://localhost:5000/service-shops')
+      .then(function (response) {
+        const name = response.data.payload.Midas[0].name
+        that.setState({storeName: name})
+      })
+      .catch(function (error) {
+        console.log("OH NO!!!", error);
+      });
+  }
+
   render() {
     return (
       <div className='butt'>
-        <h1>Login Below</h1>
-        <Button className='button1' variant="contained" color="primary">
-          Login
+        <h2>Get Data</h2>
+        <h3>{this.state.storeName}</h3>
+        <Button className='button1' variant="contained" color="primary" onClick={this.clickButton}>
+          Get
         </Button>
       </div>
     )
