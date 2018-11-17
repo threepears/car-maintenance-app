@@ -3,8 +3,9 @@
 const express = require('express');
 const router = express.Router()
 const standardResponse = require('../utils/response');
-const data = require('./dummy.json');
+const data = require('../../dev/dummy.json');
 console.log(data.serviceShops);
+console.log('HERERERERE ************************')
 
 
 router.get('/', (req, res) => {
