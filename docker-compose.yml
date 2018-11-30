@@ -2,19 +2,20 @@ version: '2'
 services:
   web:
     build: .
-    command: npm run start
+    command: npm run server-build-and-watch
     volumes:
-      - .:/usr/workspace/ncms
-      - /usr/workspace/ncms/node_modules
+      - .:/usr/groupproject/autoapp
+      - /usr/groupproject/autoapp/node_modules
     ports:
       - "4000:5000"
       - "127.0.0.1:8080:8080"
     depends_on:
-      - postgres
+      - postgres-db
     environment:
-      DATABASE_URL: postgres://ncms@postgres/ncms
-  postgres:
+      DATABASE_URL: postgres://admin:admin@postgres-db:5432/car_app
+  postgres-db:
     image: postgres:9.6.2-alpine
     environment:
-      POSTGRES_USER: ncms
-      POSTGRES_DB: ncms
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: car_app

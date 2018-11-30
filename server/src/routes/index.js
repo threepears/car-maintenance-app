@@ -4,12 +4,12 @@ const express = require('express');
 const router = express.Router()
 const standardResponse = require('../utils/response');
 const data = require('../../dev/dummy.json');
-console.log(data.serviceShops);
-console.log('HERERERERE ************************')
+// console.log(data.serviceShops);
+// console.log('HERERERERE ************************')
 
 
 router.get('/', (req, res) => {
-  res.send('Welcome to the auto maintenance apps!');
+  res.send('default route works again');
 });
 
 router.get('/service-events', (req, res) =>
