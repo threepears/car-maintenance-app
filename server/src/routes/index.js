@@ -12,9 +12,9 @@ router.get('/', (req, res) => {
   res.send('default route works again');
 });
 
-router.get('/service-events', (req, res) =>
+router.get('/service-events', (req, res) => {
   res.send(standardResponse(data.serviceEvents))
-);
+});
 
 router.get('/service-categories', (req, res) => {
   res.send('Here are some service categories!');
