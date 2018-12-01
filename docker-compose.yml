@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     build: .
-    command: npm run server-build
+    command: npm run start-dev
     volumes:
       - .:/usr/groupproject/autoapp
       - /usr/groupproject/autoapp/node_modules
