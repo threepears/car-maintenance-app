@@ -2,13 +2,13 @@ version: '2'
 services:
   web:
     build: .
-    command: npm run server-build-and-watch
+    command: npm run server-build
     volumes:
       - .:/usr/groupproject/autoapp
       - /usr/groupproject/autoapp/node_modules
     ports:
       - "4000:5000"
-      - "127.0.0.1:8080:8080"
+      - "8080:8080"
     depends_on:
       - postgres-db
     environment:
