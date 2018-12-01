@@ -6,7 +6,7 @@
     "www": "webpack-dev-server --mode development --host 0.0.0.0",
     "server": "nodemon ./server/dist/index.js",
     "start": "concurrently \"npm run www\" \"npm run server\"",
-    "start-dev": "concurrently \"npm run server-build\" \"npm run server\" \"npm run www\"",
+    "start-dev": "npm install && concurrently \"npm run server-build\" \"npm run server\" \"npm run www\"",
     "server-build": "babel ./server/src -w -d ./server/dist --presets env,stage-2",
     "server-build-and-watch": "concurrently \"npm run server-build\" \"npm run server\" "
   },
@@ -22,8 +22,10 @@
     "babel-cli": "^6.26.0",
     "babel-preset-stage-2": "^6.24.1",
     "express": "^4.16.3",
+    "jquery": "^3.3.1",
     "knex": "^0.15.2",
     "pg": "^7.6.1",
+    "ramda": "^0.26.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
