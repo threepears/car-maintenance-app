@@ -2,10 +2,13 @@
 
 const express = require('express');
 const router = express.Router()
+
+const environment = process.env.NODE_ENV || 'development'    // if something else isn't setting ENV, use development
+const configuration = require('../../../knexfile')[environment]    // require environment's settings from knexfile
+const knex = require('knex')(configuration)              // connect to DB via knex using env's settings
 const standardResponse = require('../utils/response');
 const data = require('../../dev/dummy.json');
-// console.log(data.serviceShops);
-// console.log('HERERERERE ************************')
+
 
 
 router.get('/', (req, res) => {
@@ -18,6 +21,16 @@ router.get('/service-events', (req, res) => {
 
 router.get('/service-categories', (req, res) => {
   res.send('Here are some service categories!');
+});
+
+router.post('/api/service-categories', (req, res) => {
+  console.log(req.body.name)
+  knex('service_category')
+    .insert({ name: req.body.name })
+    .catch(function(err) {
+      console.error(err)
+    })
+  res.send('much success')
 });
 
 router.get('/service-shops', (req, res) =>
