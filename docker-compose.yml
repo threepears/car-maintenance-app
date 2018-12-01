@@ -12,10 +12,13 @@ services:
     depends_on:
       - postgres-db
     environment:
-      DATABASE_URL: postgres://admin:admin@postgres-db:5432/car_app
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: car_app
+      POSTGRES_HOST: postgres-db
   postgres-db:
     image: postgres:9.6.2-alpine
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
       POSTGRES_DB: car_app

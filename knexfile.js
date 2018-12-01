@@ -5,11 +5,10 @@ module.exports = {
         directory: './server/db/migrations'
       },
       connection: {
-        host:'postgres-db',
-        user: 'admin',
-        password: 'admin',
-        port: '',
-        database: 'car_app'
+        host: process.env.POSTGRES_HOST,
+        user: process.env.POSTGRES_USER,
+        password: process.env.POSTGRES_PASSWORD,
+        database: process.env.POSTGRES_DB
       },
       seeds: {
         directory: './server/db/seeds/dev'
