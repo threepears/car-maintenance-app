@@ -9,7 +9,7 @@ const data = require('../../dev/dummy.json');
 
 
 router.get('/', (req, res) => {
-  res.send('default route works agains');
+  res.send('default route works again');
 });
 
 router.get('/service-events', (req, res) =>

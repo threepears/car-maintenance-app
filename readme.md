@@ -23,4 +23,4 @@ After the build process finishes and Docker is running, you will be able to acce
 
 ##### Additional Docker Information relative to this dev build
 
-1. Run npm commands `docker run web npm someCommand`
+1. Run npm commands `docker-compose run web npm someCommand`
