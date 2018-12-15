@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import Button from '@material-ui/core/Button'
-
+import InputForm from '../components/InputForm'
 import { withStyles } from '@material-ui/core/styles'
 
 // We can inject some CSS into the DOM.
@@ -25,6 +25,8 @@ class App extends Component {
     this.clickButton = this.clickButton.bind(this)
   }
 
+
+
   clickButton() {
     const that = this
     return axios.get('http://localhost:5000/service-shops')
@@ -40,8 +42,37 @@ class App extends Component {
   }
 
   render() {
+
+    const userCarInfo = [
+      {
+        label: 'Car Nickname',
+        name: 'nickname'
+      },
+      {
+        label: 'Make',
+        name: 'make'
+      },
+      {
+        label: 'Model',
+        name: 'model'
+      },
+      {
+        label: 'Year',
+        name: 'year'
+      },
+      {
+        label: 'Mileage',
+        name: 'mileage'
+      },
+      {
+        label: 'VIN',
+        name: 'vin'
+      }
+    ]
+
     return (
       <React.Fragment>
+      <InputForm userCarInfo={userCarInfo} />
       <div className='get-data'>
         <h2>Get Data</h2>
         <Button className='button1' variant="contained" color="primary" onClick={this.clickButton}>
