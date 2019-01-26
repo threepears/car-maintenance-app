@@ -2,6 +2,9 @@
 
 const express = require('express');
 const router = express.Router()
+import passport from 'passport';
+const LocalStrategy = require('passport-local').Strategy;
+
 
 const environment = process.env.NODE_ENV || 'development'    // if something else isn't setting ENV, use development
 const configuration = require('../../../knexfile')[environment]    // require environment's settings from knexfile
@@ -13,6 +16,22 @@ const data = require('../../dev/dummy.json');
 
 router.get('/', (req, res) => {
   res.send('default route works again');
+});
+
+router.post('/api/auth/', (req, res) => {
+  passport.use(new LocalStrategy(
+    function (username, password, done) {
+
+      return done(null, {});
+
+      // User.findOne({ username: username }, function (err, user) {
+      //   if (err) { return done(err); }
+      //   if (!user) { return done(null, false); }
+      //   if (!user.verifyPassword(password)) { return done(null, false); }
+      //   return done(null, user);
+      // });
+    }
+  ));
 });
 
 router.get('/service-events', (req, res) => {
