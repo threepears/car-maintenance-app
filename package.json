@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
+    "go": "docker-compose up",
     "www": "webpack-dev-server --mode development --host 0.0.0.0",
     "server": "nodemon ./server/dist/index.js",
+    "migrate": "docker-compose run web knex migrate:latest",
     "start": "concurrently \"npm run www\" \"npm run server\"",
     "start-dev": "npm install && concurrently \"npm run server-build\" \"npm run server\" \"npm run www\"",
     "server-build": "babel ./server/src -w -d ./server/dist --presets env,stage-2",
