@@ -5,12 +5,24 @@ import bodyParser from 'body-parser'
 import passport from 'passport';
 const LocalStrategy = require('passport-local').Strategy;
 const app = express()
+// const publicPath = path.join(__dirname, '..', 'public');
 const router = require('./routes')
 
 const PORT = 5000
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+
+// beezy added this but doesn't remember what it means
+// app.use(express.static(publicPath));
+
+// and beezy added this
+// if what the user requested isn't in the /public folder, serve up index.html
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(publicPath, 'index.html'));
+// });
+
+
 app.use('/', router)
 
 

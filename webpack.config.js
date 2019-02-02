@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // import autoprefixer from 'autoprefixer';
 
 module.exports = {
-  entry: './www/src/index.js',
+  entry: './www/src/containers/App.js',
   output: {
     path: path.join(__dirname, '/www/dist'),
     filename: "bundle.js"
@@ -50,6 +50,6 @@ module.exports = {
       filename: "./index.html"
     })
   ],
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-eval-source-map',
   watch: true,
 }

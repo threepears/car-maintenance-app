@@ -1,13 +1,28 @@
 import React from 'react'
+// import { TextField } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField';
 
-export default class Auth extends React.Component {
+class Auth extends React.Component {
   render() {
+    // state = {
+    //   name: ''
+    // }
+
     return (
-      <div>
-        AUTH PAGE BOYYY
-      </div>
+      <form>
+        <TextField
+          id="outlined-name"
+          // label="Enter Name"
+          placeholder="Enter Name"
+          // className={classes.textField}
+          // value={this.state.name}
+          // onChange={this.handleChange('name')}
+          margin="normal"
+          variant="filled"
+        />
+      </form>
     );
   }
 }
 
-// export default Auth;
+export default Auth;

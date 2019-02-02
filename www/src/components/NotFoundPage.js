@@ -1,13 +1,7 @@
 import React from 'react';
 
-const NotFoundPage = {
-  render() {
-    return (
+export default () => (
       <div>
         <h1>THIS MESS AINT EVEN UP IN HERE</h1>
       </div>
     )
-  }
-};
-
-export default NotFoundPage;
