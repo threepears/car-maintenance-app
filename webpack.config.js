@@ -50,5 +50,6 @@ module.exports = {
       filename: "./index.html"
     })
   ],
-  watch: true
+  devtool: 'inline-source-map',
+  watch: true,
 }
