@@ -1,55 +1,56 @@
 'use strict'
 
 import express from 'express'
-import bodyParser from 'body-parser'
-import passport from 'passport';
-const LocalStrategy = require('passport-local').Strategy;
+import middleware from './middleware'
+
+
 const app = express()
 // const publicPath = path.join(__dirname, '..', 'public');
-const router = require('./routes')
 
 const PORT = 5000
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
 
-// beezy added this but doesn't remember what it means
-// app.use(express.static(publicPath));
+app.use('/', middleware)
 
-// and beezy added this
-// if what the user requested isn't in the /public folder, serve up index.html
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(publicPath, 'index.html'));
-// });
-
-
-app.use('/', router)
-
-
-app.use(passport.initialize());
+// app.use(passport.initialize());
 // app.use(passport.session());
 
-passport.use(new LocalStrategy(
-  function (username, password, done) {
-    console.log('*******', username, password)
-    return done(null, {})
-  }
-));
+// passport.use(new LocalStrategy(
+//   function (username, password, done) {
+//     console.log('*******', username, password)
+//     // hash password, do something - for new
+//     // get user object from db
 
-passport.serializeUser(function (user, done) {
-  done(null, user);
-});
+//     // User.findOne({ username: username }, function (err, user) {
+//     //   if (err) { return done(err); }
+//     //   if (!user) {
+//     //     return done(null, false, { message: 'Incorrect username.' });
+//     //   }
+//     //   if (!user.validPassword(password)) {
+//     //     return done(null, false, { message: 'Incorrect password.' });
+//     //   }
+//     //   return done(null, user);
+//     // });
 
-passport.deserializeUser(function (user, done) {
-  done(null, user);
-});
+//   let userObjectNew = {}
+//   return done(null, userObjectNew)
+//   }
+// ));
 
-app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function (req, res) {
-    console.log('HERE ***************************************')
-    res.redirect('/');
-  });
+// passport.serializeUser(function (user, done) {
+//   done(null, user);
+// });
+
+// passport.deserializeUser(function (user, done) {
+//   done(null, {'hey':1,'somkey':2});
+// });
+
+// app.post('/login',
+//   passport.authenticate('local', { failureRedirect: '/login' }),
+//   function (req, res) {
+//     console.log('HERE ***************************************', req.body)
+//     res.redirect('/');
+//   });
 
 
 

@@ -2,9 +2,9 @@
 
 const express = require('express');
 const router = express.Router()
-import passport from 'passport';
-const LocalStrategy = require('passport-local').Strategy;
-
+import passport from '../middleware/passport';
+// const LocalStrategy = require('passport-local').Strategy;
+import { auth } from './auth'
 
 const environment = process.env.NODE_ENV || 'development'    // if something else isn't setting ENV, use development
 const configuration = require('../../../knexfile')[environment]    // require environment's settings from knexfile
@@ -12,27 +12,30 @@ const knex = require('knex')(configuration)              // connect to DB via kn
 const standardResponse = require('../utils/response');
 const data = require('../../dev/dummy.json');
 
+// passport.serializeUser(function (user, done) {
+//   done(null, user);
+// });
 
+// passport.deserializeUser(function (user, done) {
+//   done(null, user);
+// });
 
 router.get('/', (req, res) => {
   res.send('default route works again');
 });
 
-router.post('/api/auth/', (req, res) => {
-  passport.use(new LocalStrategy(
-    function (username, password, done) {
+// passport.use(new LocalStrategy(
+//   function (username, password, done) {
+//     console.log('*******', username, password)
+//     return done(null, {})
+//   }
+// ));
 
-      return done(null, {});
+// router.post('/api/auth/', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
+//   console.log('here')
+// })
 
-      // User.findOne({ username: username }, function (err, user) {
-      //   if (err) { return done(err); }
-      //   if (!user) { return done(null, false); }
-      //   if (!user.verifyPassword(password)) { return done(null, false); }
-      //   return done(null, user);
-      // });
-    }
-  ));
-});
+router.post('/api/auth/', auth)
 
 router.get('/service-events', (req, res) => {
   res.send(standardResponse(data.serviceEvents))
