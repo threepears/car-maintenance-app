@@ -1,5 +1,6 @@
 import passport from 'passport'
 import crypto from 'crypto'
+import knex from '../../db'
 
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -21,7 +22,7 @@ passport.use(new LocalStrategy(
     let hashedPassword = crypto.createHash('sha256');
     hashedPassword.update(devSalt+password)
     console.log('SALTED PASSWURD', hashedPassword.digest('hex'))
-
+console.log('RES *****************', knex('users').select('*').then(data =>  console.log('data*************', data)))
     // connect to db via knex and store the user
 
     // hash password, do something - for new

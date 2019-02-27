@@ -1,6 +1,8 @@
 import passport from '../middleware/passport'
 import crypto from 'crypto';
 
+// middleware and callback in same spot
+
 // export const auth = (req, res, next) => {
 //   authenticate()
 //   console.log("AUTHENTICATE", authenticate)
