@@ -27,15 +27,8 @@ import crypto from 'crypto';
 export const auth = (req, res) => {
 
   const { username, password } = req.body
-    console.log('here **********************', username, password)
 
-
-  // const key = crypto.scryptSync(password, "bigbuddies", 64);
-  // const cipher = crypto.createCipheriv('aes192', key, null);
-  // let encrypted = cipher.update(password, 'utf8', 'hex');
-  // encrypted += cipher.final('hex');
-
-  // console.log("ENCRYPTED", encrypted)
+  // do something with user here 
 
   return res.status(200).json({ user: "Bob's Your Uncle" })
   // ).catch(next)

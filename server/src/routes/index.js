@@ -12,28 +12,9 @@ const knex = require('knex')(configuration)              // connect to DB via kn
 const standardResponse = require('../utils/response');
 const data = require('../../dev/dummy.json');
 
-// passport.serializeUser(function (user, done) {
-//   done(null, user);
-// });
-
-// passport.deserializeUser(function (user, done) {
-//   done(null, user);
-// });
-
 router.get('/', (req, res) => {
   res.send('default route works again');
 });
-
-// passport.use(new LocalStrategy(
-//   function (username, password, done) {
-//     console.log('*******', username, password)
-//     return done(null, {})
-//   }
-// ));
-
-// router.post('/api/auth/', passport.authenticate('local', { failureRedirect: '/login' }), (req, res) => {
-//   console.log('here')
-// })
 
 router.post('/api/auth/', passport.authenticate('local', { failureRedirect: '/login' }), auth)
 
