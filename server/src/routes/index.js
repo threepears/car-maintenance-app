@@ -35,7 +35,7 @@ router.get('/', (req, res) => {
 //   console.log('here')
 // })
 
-router.post('/api/auth/', auth)
+router.post('/api/auth/', passport.authenticate('local', { failureRedirect: '/login' }), auth)
 
 router.get('/service-events', (req, res) => {
   res.send(standardResponse(data.serviceEvents))

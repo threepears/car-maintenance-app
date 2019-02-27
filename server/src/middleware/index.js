@@ -1,6 +1,6 @@
-import routes from '../routes'
 import bodyParser from 'body-parser'
 import passport from './passport'
+import routes from '../routes'
 
 const middleware = [
   bodyParser.urlencoded({ extended: false }),
